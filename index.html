@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robinson Roger, portfolio marketing</title>
+<meta name="description" content="Portfolio de Robinson Roger, futur étudiant ESDES à la recherche d'une alternance de 12 mois en marketing. Social media, création de contenu, marketing d'influence.">
+<meta name="author" content="Robinson Roger">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Robinson Roger, portfolio marketing">
+<meta property="og:description" content="Alternance marketing 12 mois. Social media, création de contenu, marketing d'influence.">
+<meta property="og:image" content="assets/img/photo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23147886'/><text x='50' y='68' font-size='52' font-family='sans-serif' font-weight='700' fill='white' text-anchor='middle'>R</text></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ======================= NAV ======================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="#top" class="nav__brand">
+      <span class="nav__mark" id="navMark">R</span>
+      <span class="nav__name" data-bind="navName"></span>
+    </a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#realisations">Réalisations</a>
+      <a href="#etude">Étude de cas</a>
+      <a href="#apropos">À propos</a>
+      <a href="#competences">Compétences</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#contact" class="nav__cta">Me contacter</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="top">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <div class="hero__text">
+      <p class="hero__badge"><span class="dot"></span><span data-bind="dispo"></span></p>
+      <h1 class="hero__title" data-bind="prenom"></h1>
+      <p class="hero__signature" data-bind="signature"></p>
+      <p class="hero__role" data-bind="titre"></p>
+      <p class="hero__sub" data-bind="sousTitre"></p>
+      <p class="hero__pitch" data-bind="accroche"></p>
+      <div class="hero__actions">
+        <button class="btn btn--primary btn--reel" id="openReel" type="button">
+          <span class="btn__play" aria-hidden="true"></span>
+          Voir le showreel
+          <small>60 s</small>
+        </button>
+        <a class="btn btn--ghost" id="cvLink" href="#" download>Télécharger mon CV</a>
+      </div>
+
+      <div class="poste" id="poste">
+        <p class="poste__label">Vous recrutez pour un poste en&nbsp;:</p>
+        <div class="poste__opts" id="posteOpts"></div>
+      </div>
+
+      <div class="hero__social" id="heroSocial"></div>
+    </div>
+    <div class="hero__portrait">
+      <div class="portrait" id="portrait"><span>R</span></div>
+      <div class="portrait__ring" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="stats" id="stats"></ul>
+  </div>
+</section>
+
+<!-- ======================= RÉALISATIONS ======================= -->
+<section class="section section--alt" id="realisations">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker">Ce que j'ai produit</span>
+      <h2 class="section__title">Réalisations</h2>
+      <p class="section__intro">Les projets que j'ai menés ou auxquels j'ai contribué. Certains sont en ligne, d'autres sont restés internes.</p>
+    </div>
+
+    <p class="tri" id="tri" hidden></p>
+    <div class="filters" id="filters" aria-label="Filtrer les réalisations"></div>
+    <div class="grid" id="projets"></div>
+    <p class="empty" id="empty" hidden>Aucune réalisation dans cette catégorie pour le moment.</p>
+  </div>
+</section>
+
+<!-- ======================= ÉTUDE DE CAS ======================= -->
+<section class="etude" id="etude">
+  <div class="wrap">
+    <div class="etude__head">
+      <span class="etude__kicker" data-bind="etudeKicker"></span>
+      <h2 class="etude__titre" data-bind="etudeTitre"></h2>
+      <p class="etude__chapo" data-bind="etudeChapo"></p>
+    </div>
+    <ul class="etude__chiffres" id="etudeChiffres"></ul>
+    <div class="etude__corps" id="etudeCorps"></div>
+    <div class="etude__chute" id="etudeChute"></div>
+  </div>
+</section>
+
+<!-- ======================= À PROPOS ======================= -->
+<section class="section" id="apropos">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker">Qui je suis</span>
+      <h2 class="section__title">À propos</h2>
+    </div>
+    <div class="about">
+      <div class="about__text" id="aboutText"></div>
+      <aside class="about__side">
+        <div class="card card--soft">
+          <h3 class="card__label">Ce que je recherche</h3>
+          <p class="card__big">Alternance marketing<br>12 mois</p>
+          <p class="card__meta" data-bind="dispo2"></p>
+          <p class="card__meta" data-bind="ville"></p>
+        </div>
+        <div class="card card--soft">
+          <h3 class="card__label">Langues</h3>
+          <div id="langues"></div>
+        </div>
+        <div class="card card--soft">
+          <h3 class="card__label">Savoir-être</h3>
+          <div class="chips" id="softskills"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= COMPÉTENCES ======================= -->
+<section class="section section--alt" id="competences">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker">Ce que je sais faire</span>
+      <h2 class="section__title">Compétences</h2>
+    </div>
+    <div class="skills" id="skills"></div>
+  </div>
+</section>
+
+<!-- ======================= PARCOURS ======================= -->
+<section class="section" id="parcours">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker">D'où je viens</span>
+      <h2 class="section__title">Parcours</h2>
+    </div>
+    <div class="parcours">
+      <div class="parcours__col">
+        <h3 class="parcours__kicker">Expériences</h3>
+        <ol class="timeline" id="experiences"></ol>
+      </div>
+      <div class="parcours__col">
+        <h3 class="parcours__kicker">Formations</h3>
+        <ol class="timeline" id="formations"></ol>
+      </div>
+    </div>
+    <div class="interets">
+      <span class="interets__label">Centres d'intérêt</span>
+      <div class="chips" id="interets"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section class="section section--contact" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <p class="contact__kicker">Parlons-en</p>
+      <h2 class="contact__title">Une alternance marketing<br>à pourvoir&nbsp;?</h2>
+      <p class="contact__text">Je réponds vite, et je peux vous envoyer des exemples concrets de ce que je produis.</p>
+      <div class="contact__links" id="contactLinks"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p>© <span id="year"></span> <span data-bind="footerName"></span></p>
+    <a href="#top" class="footer__top">Haut de page ↑</a>
+  </div>
+</footer>
+
+<!-- ======================= SHOWREEL ======================= -->
+<div class="reel" id="reel" hidden role="dialog" aria-modal="true" aria-label="Showreel de Robinson Roger">
+  <div class="reel__head">
+    <div class="reel__bars" id="reelBars"></div>
+    <div class="reel__tools">
+      <button class="reel__icon" id="reelSound" type="button" aria-label="Activer le son" hidden>
+        <span class="reel__soundOff" aria-hidden="true">🔇</span>
+      </button>
+      <button class="reel__icon" id="reelClose" type="button" aria-label="Fermer le showreel">
+        <span aria-hidden="true">✕</span>
+      </button>
+    </div>
+  </div>
+  <div class="reel__track" id="reelTrack" tabindex="-1"></div>
+  <button class="reel__arrow reel__arrow--down" id="reelNext" type="button" aria-label="Suivant">
+    <span aria-hidden="true">↓</span>
+  </button>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
